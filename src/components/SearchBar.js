@@ -31,7 +31,18 @@ function SearchBar() {
       <Logo>
         <img src='/images/yelp_logo.png' alt='logo' />
       </Logo>
-      <SearchInput></SearchInput>
+      <SearchInput>
+        <span>Find</span>
+        <input
+          type='text'
+          placeholder='plumbers, delivery, takeout...'
+          className='item'
+        />
+        <hr />
+        <span>Near</span>
+        <input type='text' placeholder='Irvine, CA' className='location' />
+        <SearchIcon />
+      </SearchInput>
     </Container>
   );
 }
@@ -125,6 +136,52 @@ const Logo = styled.a`
   }
 `;
 
-const SearchInput = styled.div``;
+const SearchInput = styled.div`
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 5vw;
+  margin-top: 25vh;
+  border-radius: 4px;
+  background-color: #d32323;
+
+  hr {
+    height: 20px;
+  }
+
+  span {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+    color: gray;
+    height: 27px;
+  }
+
+  input.item {
+    height: 45px;
+    width: 35vw;
+    border: none;
+    font-size: 20px;
+  }
+
+  input.location {
+    height: 45px;
+    width: 30vw;
+    border: none;
+    font-size: 20px;
+  }
+`;
+
+const SearchIcon = styled(Search)`
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+  background-color: #d32323;
+`;
 
 export default SearchBar;
