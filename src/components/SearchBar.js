@@ -1,6 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { Search } from "@material-ui/icons";
+import {
+  Search,
+  Restaurant,
+  House,
+  Motorcycle,
+  Bathtub,
+  Favorite,
+  ArrowDropDown,
+} from "@material-ui/icons";
 
 function SearchBar() {
   return (
@@ -44,19 +52,26 @@ function SearchBar() {
       </SearchInput>
       <Services>
         <a href='/plumbers'>
+          <Bathtub className='services-icon' />
           <span>Plumbers</span>
         </a>
         <a href='/restaurants'>
+          <Restaurant className='services-icon' />
           <span>Restaurants</span>
         </a>
         <a href='/home-services'>
+          <House className='services-icon' />
           <span>Home Services</span>
+          <ArrowDropDown className='drop-down-icon' />
         </a>
         <a href='/delivery'>
+          <Motorcycle className='services-icon' />
           <span>Delivery</span>
         </a>
         <a href='/black-owned'>
+          <Favorite className='services-icon' />
           <span>Black Owned</span>
+          <ArrowDropDown className='drop-down-icon' />
         </a>
       </Services>
     </Container>
@@ -64,8 +79,8 @@ function SearchBar() {
 }
 
 const Container = styled.div`
-  position: fixed;
-  top: 100px;
+  position: relative;
+  top: -550px;
   font-size: 14px;
   font-weight: bolder;
 `;
@@ -76,47 +91,56 @@ const Nav = styled.div`
 `;
 
 const NavMenu = styled.div`
-  position: fixed;
+  /* position: absolute; */
   display: flex;
   align-items: center;
-  justify-content: center;
-  left: 5vw;
+  justify-content: flex-start;
+  padding-left: 5vw;
 
   a {
     display: flex;
     align-items: center;
-    padding-right: 30px;
+    padding: 10px 15px;
     color: #fff;
     text-decoration: none;
+    border-bottom: 2px solid transparent;
   }
 
   a:hover {
-    text-decoration: underline;
+    border-bottom: 2px solid #fff;
   }
 `;
 
 const User = styled.div`
-  position: fixed;
+  /* position: relative; */
   display: flex;
   align-items: center;
-  justify-content: center;
-  right: 5vw;
+  justify-content: flex-end;
+  padding-right: 5vw;
+  /* right: 5vw; */
 `;
 
 const Login = styled.div`
+  padding-right: 12px;
+
   a {
-    padding: 20px;
+    padding: 10px 15px;
     color: #fff;
     text-decoration: none;
+    border-bottom: 2px solid transparent;
 
     .button {
       border: 4px solid white;
     }
   }
+
+  a:hover {
+    border-bottom: 2px solid #fff;
+  }
 `;
 
 const Signup = styled.button`
-  position: relative;
+  /* position: relative; */
   font-size: 14px;
   font-weight: bold;
   height: 35px;
@@ -143,9 +167,9 @@ const Logo = styled.a`
   justify-self: center;
   align-items: center;
   width: 150px;
-  position: fixed;
+  position: relative;
   left: 45vw;
-  margin-top: 12vh;
+  margin-top: 8vh;
   cursor: pointer;
 
   img {
@@ -159,7 +183,7 @@ const SearchInput = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 25vh;
+  margin-top: 5vh;
   border-radius: 4px;
   background-color: white;
   left: 10vw;
@@ -205,11 +229,23 @@ const SearchIcon = styled(Search)`
 `;
 
 const Services = styled.div`
-  position: fixed;
-  margin-top: 32vh;
+  position: relative;
+  margin-top: 11vh;
   justify-content: center;
   align-items: center;
-  left: 20vw;
+  left: 25vw;
+
+  .services-icon {
+    height: 20px;
+    padding-top: 2px;
+    margin-bottom: -4px;
+  }
+
+  .drop-down-icon {
+    height: 20px;
+    margin-bottom: -5px;
+  }
+
   a {
     color: white;
     text-decoration: none;
@@ -218,6 +254,10 @@ const Services = styled.div`
 
   a:hover {
     text-decoration: underline;
+  }
+
+  @media (max-width: 1000px) {
+    left: 8vw;
   }
 `;
 
