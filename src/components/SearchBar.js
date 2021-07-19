@@ -32,17 +32,33 @@ function SearchBar() {
         <img src='/images/yelp_logo.png' alt='logo' />
       </Logo>
       <SearchInput>
-        <span>Find</span>
+        <span className='span-item'>Find</span>
         <input
           type='text'
           placeholder='plumbers, delivery, takeout...'
           className='item'
         />
-        <hr />
-        <span>Near</span>
+        <span className='span-location'>Near</span>
         <input type='text' placeholder='Irvine, CA' className='location' />
         <SearchIcon />
       </SearchInput>
+      <Services>
+        <a href='/plumbers'>
+          <span>Plumbers</span>
+        </a>
+        <a href='/restaurants'>
+          <span>Restaurants</span>
+        </a>
+        <a href='/home-services'>
+          <span>Home Services</span>
+        </a>
+        <a href='/delivery'>
+          <span>Delivery</span>
+        </a>
+        <a href='/black-owned'>
+          <span>Black Owned</span>
+        </a>
+      </Services>
     </Container>
   );
 }
@@ -129,31 +145,27 @@ const Logo = styled.a`
   width: 150px;
   position: fixed;
   left: 45vw;
-  margin-top: 10vh;
+  margin-top: 12vh;
+  cursor: pointer;
 
   img {
     width: 100%;
+    filter: brightness(1.5);
   }
 `;
 
 const SearchInput = styled.div`
+  position: absolute;
   display: flex;
-  flex: 1;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  left: 5vw;
   margin-top: 25vh;
   border-radius: 4px;
-  background-color: #d32323;
-
-  hr {
-    height: 20px;
-  }
+  background-color: white;
+  left: 10vw;
 
   span {
     display: flex;
-    background-color: white;
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -162,26 +174,51 @@ const SearchInput = styled.div`
     height: 27px;
   }
 
-  input.item {
+  span.span-location {
+    border-left: 1px solid lightgrey;
+    height: 10px;
+  }
+
+  input {
     height: 45px;
-    width: 35vw;
     border: none;
     font-size: 20px;
+    :focus {
+      outline: none;
+    }
+  }
+
+  input.item {
+    width: 34vw;
   }
 
   input.location {
-    height: 45px;
-    width: 30vw;
-    border: none;
-    font-size: 20px;
+    width: 28vw;
   }
 `;
 
 const SearchIcon = styled(Search)`
-  padding-left: 20px;
-  padding-right: 20px;
+  border-radius: 0 4px 4px 0;
+  padding: 11.5px 22px;
   color: white;
   background-color: #d32323;
+`;
+
+const Services = styled.div`
+  position: fixed;
+  margin-top: 32vh;
+  justify-content: center;
+  align-items: center;
+  left: 20vw;
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 0 20px;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 `;
 
 export default SearchBar;
