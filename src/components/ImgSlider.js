@@ -29,6 +29,12 @@ function ImgSlider() {
           alt='beer'
         />
       </Wrap>
+      <Wrap>
+        <img
+          src='https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_large_assets/e456d8b923f5/assets/img/home/hero_photos/DLIUyjgS7v50YRV2xfNquA.jpg'
+          alt='sk-donuts'
+        />
+      </Wrap>
     </Carousel>
   );
 }
@@ -60,6 +66,7 @@ const Wrap = styled.div`
     height: auto;
     width: 100%;
     z-index: -1;
+    filter: brightness(1.4);
   }
 `;
 

@@ -1,24 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { Close } from "@material-ui/icons";
 
 function Header() {
+  const [isHidden, setIsHidden] = useState(true);
+
+  function handleHide() {
+    setIsHidden(false);
+  }
+
   return (
-    <Nav>
-      <Logo>
-        <img src='/images/food_delivery_icon_2x.png' alt='food_icon' />
-        <p>You can always order in</p>
-      </Logo>
-      <Wrapper>
-        <a href='/delivery'>Delivery</a>
-        <a href='/pizza_delivery'>Pizza Delivery</a>
-        <a href='/chinese_delivery'>Chinese Food Delivery</a>
-      </Wrapper>
-    </Nav>
+    <div>
+      {isHidden ? (
+        <Nav>
+          <Logo>
+            <img src='/images/food_delivery_icon_2x.png' alt='food_icon' />
+            <p>You can always order in</p>
+          </Logo>
+          <Wrapper>
+            <a href='/delivery'>Delivery</a>
+            <a href='/pizza_delivery'>Pizza Delivery</a>
+            <a href='/chinese_delivery'>Chinese Food Delivery</a>
+            <Close className='close-icon' onClick={handleHide} />
+          </Wrapper>
+        </Nav>
+      ) : null}
+    </div>
   );
 }
 
 const Nav = styled.div`
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -62,6 +74,17 @@ const Wrapper = styled.div`
 
   a:hover {
     text-decoration: underline;
+  }
+
+  .close-icon {
+    height: 20px;
+    color: gray;
+    margin-bottom: -5px;
+    cursor: pointer;
+  }
+
+  .close-icon:hover {
+    color: black;
   }
 `;
 

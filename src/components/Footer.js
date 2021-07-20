@@ -75,7 +75,7 @@ const Wrap = styled.div`
 
   div {
     padding: 0px 70px 70px 10px;
-    color: red;
+    color: #d32323;
 
     span {
       font-weight: 700;

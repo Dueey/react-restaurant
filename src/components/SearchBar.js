@@ -37,7 +37,9 @@ function SearchBar() {
         </User>
       </Nav>
       <Logo>
-        <img src='/images/yelp_logo.png' alt='logo' />
+        <a href='/'>
+          <img src='/images/yelp_logo.png' alt='logo' />
+        </a>
       </Logo>
       <SearchInput>
         <span className='span-item'>Find</span>
@@ -80,7 +82,7 @@ function SearchBar() {
 
 const Container = styled.div`
   position: relative;
-  top: -550px;
+  top: -560px;
   font-size: 14px;
   font-weight: bolder;
 `;
@@ -186,7 +188,7 @@ const SearchInput = styled.div`
   margin-top: 5vh;
   border-radius: 4px;
   background-color: white;
-  left: 10vw;
+  left: 12vw;
 
   span {
     display: flex;
@@ -194,7 +196,7 @@ const SearchInput = styled.div`
     align-items: center;
     padding: 10px;
     font-size: 20px;
-    color: gray;
+    color: #000;
     height: 27px;
   }
 
@@ -226,11 +228,17 @@ const SearchIcon = styled(Search)`
   padding: 11.5px 22px;
   color: white;
   background-color: #d32323;
+  cursor: pointer;
+
+  :hover {
+    background-color: #b30308;
+    transition: 0.5s;
+  }
 `;
 
 const Services = styled.div`
   position: relative;
-  margin-top: 11vh;
+  margin-top: 12vh;
   justify-content: center;
   align-items: center;
   left: 25vw;
