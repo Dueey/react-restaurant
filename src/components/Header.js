@@ -41,19 +41,21 @@ const Nav = styled.div`
   padding: 0 36px;
   /* letter-spacing: 16px; */
   z-index: 3;
+  white-space: nowrap;
 `;
 
 const Logo = styled.a`
   padding: 0;
-  margin-top: 5px;
-  max-height: 70px;
   font-size: 10;
   justify-content: space-between;
   display: flex;
+  align-items: center;
+  padding-left: 8vw;
 
   img {
-    height: 40px;
+    height: 35px;
     padding-right: 10px;
+    margin-top: -5px;
   }
 
   p {
@@ -62,8 +64,10 @@ const Logo = styled.a`
 `;
 
 const Wrapper = styled.div`
-  justify-content: space-between;
-  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8vw;
 
   a {
     font-size: 12px;
@@ -79,7 +83,6 @@ const Wrapper = styled.div`
   .close-icon {
     height: 20px;
     color: gray;
-    margin-bottom: -5px;
     cursor: pointer;
   }
 

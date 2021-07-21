@@ -98,6 +98,7 @@ const NavMenu = styled.div`
   align-items: center;
   justify-content: flex-start;
   padding-left: 12vw;
+  white-space: nowrap;
 
   a {
     display: flex;
@@ -124,6 +125,7 @@ const User = styled.div`
 
 const Login = styled.div`
   padding-right: 12px;
+  white-space: nowrap;
 
   a {
     padding: 10px 15px;
@@ -241,6 +243,7 @@ const Services = styled.div`
   margin-top: 12vh;
   justify-content: center;
   align-items: center;
+  white-space: nowrap;
 
   .services-icon {
     height: 20px;
@@ -263,9 +266,9 @@ const Services = styled.div`
     text-decoration: underline;
   }
 
-  @media (max-width: 1000px) {
+  /* @media (max-width: 1000px) {
     left: 8vw;
-  }
+  } */
 `;
 
 export default SearchBar;

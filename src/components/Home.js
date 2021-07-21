@@ -4,6 +4,7 @@ import ImgSlider from "./ImgSlider";
 import SearchBar from "./SearchBar";
 import Businesses from "./Businesses";
 import MobileApps from "./MobileApps";
+import Category from "./Category";
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       <ImgSlider />
       <SearchBar />
       <Businesses />
+      <Category />
       <MobileApps />
     </Container>
   );
