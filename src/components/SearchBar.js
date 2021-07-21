@@ -97,7 +97,7 @@ const NavMenu = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 5vw;
+  padding-left: 12vw;
 
   a {
     display: flex;
@@ -118,7 +118,7 @@ const User = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 5vw;
+  padding-right: 12vw;
   /* right: 5vw; */
 `;
 
@@ -166,7 +166,7 @@ const Signup = styled.button`
 
 const Logo = styled.a`
   display: flex;
-  justify-self: center;
+  justify-content: center;
   align-items: center;
   width: 150px;
   position: relative;
@@ -237,11 +237,10 @@ const SearchIcon = styled(Search)`
 `;
 
 const Services = styled.div`
-  position: relative;
+  display: flex;
   margin-top: 12vh;
   justify-content: center;
   align-items: center;
-  left: 25vw;
 
   .services-icon {
     height: 20px;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ImgSlider from "./ImgSlider";
 import SearchBar from "./SearchBar";
 import Businesses from "./Businesses";
+import MobileApps from "./MobileApps";
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
       <ImgSlider />
       <SearchBar />
       <Businesses />
+      <MobileApps />
     </Container>
   );
 }

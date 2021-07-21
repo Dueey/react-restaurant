@@ -6,28 +6,28 @@ function Businesses() {
     <Container>
       <span>Find the Best Businesses in Town</span>
       <Wrapper>
-        <Wrap>
+        <Wrap href='/gym'>
           <img
             src='https://s3-media0.fl.yelpcdn.com/assets/public/gyms@2x.yji-3fb0a4f3e62f2e048ff6b94dcc909a4b.jpg'
             alt='gym'
           />
           <p>Gyms</p>
         </Wrap>
-        <Wrap>
+        <Wrap href='/dry-cleaning'>
           <img
             src='https://s3-media0.fl.yelpcdn.com/assets/public/dryclean@2x.yji-ff5b642fbbdf949c26c3ca19b6dfb4bb.jpg'
             alt='dry-cleaning'
           />
           <p>Dry Cleaning</p>
         </Wrap>
-        <Wrap>
+        <Wrap href='/locksmith'>
           <img
             src='https://s3-media0.fl.yelpcdn.com/assets/public/locksmiths@2x.yji-3f05ca8eefd68641e705ee8ce1148105.jpg'
             alt='locksmith'
           />
           <p>Locksmith</p>
         </Wrap>
-        <Wrap>
+        <Wrap href='/phone-repair'>
           <img
             src='https://s3-media0.fl.yelpcdn.com/assets/public/mobilephonerepair@2x.yji-8d16cabd40520ed32733ee590e6bc5f4.jpg'
             alt='phone-repair'
@@ -48,11 +48,11 @@ const Container = styled.div`
   background-color: #f5f5f5;
 
   span {
-    position: relative;
+    display: flex;
     color: #d32323;
     font-size: 20px;
     font-weight: bolder;
-    left: 42%;
+    justify-content: center;
   }
 `;
 
@@ -62,7 +62,7 @@ const Wrapper = styled.div`
   padding-top: 20px;
 `;
 
-const Wrap = styled.div`
+const Wrap = styled.a`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,6 +71,7 @@ const Wrap = styled.div`
   border: 1px solid #e6e6e6;
   border-radius: 0 0 4px 4px;
   background-color: #fff;
+  text-decoration: none;
 
   img {
     height: 174px;
@@ -79,6 +80,7 @@ const Wrap = styled.div`
   }
 
   p {
+    color: #000;
     font-weight: bolder;
     font-size: 15px;
   }
