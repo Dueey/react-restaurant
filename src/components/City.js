@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Search } from "@material-ui/icons";
+import { Search, Whatshot, StarBorder } from "@material-ui/icons";
 
 function City() {
   return (
@@ -27,6 +27,20 @@ function City() {
             alt=''
           />
           <a href='/kokonut'>Oishi Shabu Shabu</a>
+          <p>
+            <StarBorder className='star' />
+            <StarBorder className='star' />
+            <StarBorder className='star' />
+            <StarBorder className='star' />
+            <StarBorder className='star' />
+            51 reviews
+          </p>
+          <p>Japanese</p>
+          <p>Irvine, CA</p>
+          <p className='opened'>
+            <Whatshot className='fire' />
+            Opened 4 weeks ago
+          </p>
         </Wrap>
         <Wrap>
           <img
@@ -34,6 +48,20 @@ function City() {
             alt=''
           />
           <a href='/kokonut'>Show Hotpot</a>
+          <p>
+            <StarBorder className='star' />
+            <StarBorder className='star' />
+            <StarBorder className='star' />
+            <StarBorder className='star' />
+            <StarBorder className='star' />
+            51 reviews
+          </p>
+          <p>Japanese</p>
+          <p>Irvine, CA</p>
+          <p className='opened'>
+            <Whatshot className='fire' />
+            Opened 4 weeks ago
+          </p>
         </Wrap>
         <Wrap>
           <img
@@ -41,6 +69,20 @@ function City() {
             alt=''
           />
           <a href='/kokonut'>Kokonut Dessert Bar</a>
+          <p>
+            <StarBorder className='star' />
+            <StarBorder className='star' />
+            <StarBorder className='star' />
+            <StarBorder className='star' />
+            <StarBorder className='star' />
+            51 reviews
+          </p>
+          <p>Japanese</p>
+          <p>Irvine, CA</p>
+          <p className='opened'>
+            <Whatshot className='fire' />
+            Opened 4 weeks ago
+          </p>
         </Wrap>
       </Wrapper>
     </Container>
@@ -112,7 +154,7 @@ const Wrap = styled.div`
   align-items: flex-start;
   margin: 0 20px;
   width: 300px;
-  height: 500px;
+  height: 350px;
   border: 1px solid #e6e6e6;
   border-radius: 4px;
 
@@ -121,6 +163,7 @@ const Wrap = styled.div`
     width: 100%;
     object-fit: cover;
     border-radius: 4px 4px 0 0;
+    cursor: pointer;
   }
 
   a {
@@ -129,11 +172,36 @@ const Wrap = styled.div`
     font-size: 16px;
     font-weight: bolder;
     white-space: nowrap;
-    padding: 15px 10px 10px 12px;
+    padding: 15px 10px 0px 12px;
   }
 
   a:hover {
     text-decoration: underline;
+  }
+
+  p {
+    color: #000;
+    font-size: 14px;
+    font-weight: lighter;
+    padding: 0 8px;
+    margin: 5px;
+  }
+
+  .opened {
+    color: #f15c00;
+  }
+
+  .fire {
+    height: 20px;
+    margin-top: -2px;
+    margin-left: -5px;
+  }
+
+  .star {
+    color: #f15c4f;
+    height: 20px;
+    margin-top: -2px;
+    margin-left: -5px;
   }
 `;
 
