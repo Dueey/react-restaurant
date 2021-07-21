@@ -60,18 +60,15 @@ function Footer() {
 }
 
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  height: 400px;
+  display: flex;
+  justify-content: center;
+  background-color: #f5f5f5;
 `;
 
 const Wrap = styled.div`
   padding-top: 70px;
   padding-left: 150px;
-  /* display: grid; */
-  /* grid-template-columns: repeat(4, minmax(0, 1fr)); */
   justify-content: center;
-  background-color: #f5f5f5;
 
   div {
     padding: 0px 70px 70px 10px;
