@@ -5,6 +5,7 @@ import SearchBar from "./SearchBar";
 import Businesses from "./Businesses";
 import MobileApps from "./MobileApps";
 import Category from "./Category";
+import City from "./City";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <ImgSlider />
       <SearchBar />
       <Businesses />
+      <City />
       <Category />
       <MobileApps />
     </Container>

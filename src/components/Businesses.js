@@ -69,7 +69,7 @@ const Wrap = styled.a`
   align-items: center;
   margin: 20px;
   border: 1px solid #e6e6e6;
-  border-radius: 0 0 4px 4px;
+  border-radius: 4px;
   background-color: #fff;
   text-decoration: none;
 
