@@ -44,10 +44,12 @@ function City() {
         </Wrap>
         <Wrap>
           <img
-            src='https://s3-media0.fl.yelpcdn.com/bphoto/dyZXCUW75tgpnXopMOuOOg/l.jpg'
+            src='https://s3-media0.fl.yelpcdn.com/bphoto/FDb1yEQqeDubSvDdgP9LrA/l.jpg'
             alt=''
           />
-          <a href='/kokonut'>Show Hotpot</a>
+          <a href='/kokonut'>
+            Mario's Neighborhood Butcher Shop & Delicatessen
+          </a>
           <p>
             <StarBorder className='star' />
             <StarBorder className='star' />
@@ -85,6 +87,11 @@ function City() {
           </p>
         </Wrap>
       </Wrapper>
+      <span>
+        <a href='/more-businesses' className='more-businesses'>
+          See more hot and new businesses
+        </a>
+      </span>
     </Container>
   );
 }
@@ -112,6 +119,20 @@ const Container = styled.div`
     font-weight: bolder;
     justify-content: center;
     padding: 10px;
+  }
+
+  a.more-businesses {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    text-decoration: none;
+    color: #0073bb;
+    font-size: 14px;
+    font-weight: lighter;
+
+    :hover {
+      text-decoration: underline;
+    }
   }
 `;
 
@@ -157,6 +178,7 @@ const Wrap = styled.div`
   height: 350px;
   border: 1px solid #e6e6e6;
   border-radius: 4px;
+  overflow-x: hidden;
 
   img {
     height: 200px;

@@ -6,6 +6,7 @@ import Businesses from "./Businesses";
 import MobileApps from "./MobileApps";
 import Category from "./Category";
 import City from "./City";
+import Recent from "./Recent";
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
       <SearchBar />
       <Businesses />
       <City />
+      <Recent />
       <Category />
       <MobileApps />
     </Container>
