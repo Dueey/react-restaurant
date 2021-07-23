@@ -85,6 +85,7 @@ const Container = styled.div`
   top: -560px;
   font-size: 14px;
   font-weight: bolder;
+  margin-bottom: -320px;
 `;
 
 const Nav = styled.div`
