@@ -46,9 +46,7 @@ function SearchBar() {
         </NavMenu>
         <User>
           <Login onClick={handleAuth}>
-            <a href='/login'>
-              <span>Log In</span>
-            </a>
+            <span>Log In</span>
           </Login>
           <Signup>
             <span>Sign Up</span>
@@ -147,18 +145,19 @@ const Login = styled.div`
   padding-right: 12px;
   white-space: nowrap;
 
-  a {
+  span {
     padding: 10px 15px;
     color: #fff;
     text-decoration: none;
     border-bottom: 2px solid transparent;
+    cursor: pointer;
 
     .button {
       border: 4px solid white;
     }
   }
 
-  a:hover {
+  span:hover {
     border-bottom: 2px solid #fff;
   }
 `;
