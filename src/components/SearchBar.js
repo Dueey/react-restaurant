@@ -1,8 +1,15 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { auth, provider } from "./firebase";
+import {
+  selectUserName,
+  selectUserPhoto,
+  selectUserLoginDetails,
+  setUserLoginDetails,
+  setSignOutState,
+} from "../features/user/userSlice";
 import {
   Search,
   Restaurant,
@@ -13,21 +20,31 @@ import {
   ArrowDropDown,
 } from "@material-ui/icons";
 
-function SearchBar() {
-  // const dispatch = useDispatch();
-  // const history = useHistory();
-  // const userName = useSelector(selectUserName);
-  // const userPhoto = useSelector(selectUserPhoto);
+function SearchBar(props) {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const userName = useSelector(selectUserName);
+  const userPhoto = useSelector(selectUserPhoto);
 
   const handleAuth = () => {
     auth
       .signInWithPopup(provider)
       .then((result) => {
-        // setUser(result.user);
+        setUser(result.user);
       })
       .catch((error) => {
         alert(error.message);
       });
+  };
+
+  const setUser = (user) => {
+    dispatch(
+      setUserLoginDetails({
+        name: user.displayName,
+        email: user.email,
+        photo: user.photoURL,
+      })
+    );
   };
 
   return (
@@ -44,14 +61,16 @@ function SearchBar() {
             <span>Talk</span>
           </a>
         </NavMenu>
-        <User>
-          <Login onClick={handleAuth}>
-            <span>Log In</span>
-          </Login>
-          <Signup>
-            <span>Sign Up</span>
-          </Signup>
-        </User>
+        {!userName ? (
+          <User>
+            <Login onClick={handleAuth}>
+              <span>Log In</span>
+            </Login>
+            <Signup>
+              <span>Sign Up</span>
+            </Signup>
+          </User>
+        ) : null}
       </Nav>
       <Logo>
         <a href='/'>
