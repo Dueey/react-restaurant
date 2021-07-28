@@ -18,6 +18,9 @@ import {
   Bathtub,
   Favorite,
   ArrowDropDown,
+  ChatBubble,
+  Notifications,
+  Person,
 } from "@material-ui/icons";
 
 function SearchBar(props) {
@@ -62,15 +65,28 @@ function SearchBar(props) {
           </a>
         </NavMenu>
         {!userName ? (
-          <User>
+          <NoUser>
             <Login onClick={handleAuth}>
               <span>Log In</span>
             </Login>
             <Signup>
               <span>Sign Up</span>
             </Signup>
-          </User>
-        ) : null}
+          </NoUser>
+        ) : (
+          <YesUser>
+            <Icon>
+              <ChatBubble />
+            </Icon>
+            <Icon>
+              <Notifications />
+            </Icon>
+            <Avatar>
+              <Person className='person' />
+              <ArrowDropDown className='arrow' />
+            </Avatar>
+          </YesUser>
+        )}
       </Nav>
       <Logo>
         <a href='/'>
@@ -151,7 +167,7 @@ const NavMenu = styled.div`
   }
 `;
 
-const User = styled.div`
+const NoUser = styled.div`
   /* position: relative; */
   display: flex;
   align-items: center;
@@ -201,6 +217,54 @@ const Signup = styled.button`
     background-color: #fff;
     color: #000;
     transition: 0.5s;
+  }
+`;
+
+const YesUser = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 12vw;
+`;
+
+const Icon = styled.div`
+  color: white;
+  padding: 5px 7px 5px 7px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin-right: 5px;
+
+  :hover {
+    background-color: gray;
+  }
+`;
+
+const Avatar = styled.div`
+  padding: 0px 10px;
+  cursor: pointer;
+
+  .person {
+    font-size: 40px;
+    color: #4273df;
+    background-color: #a0c3ff;
+    padding: 0px;
+    border: 1px solid transparent;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .arrow {
+    color: white;
+    background-color: gray;
+    padding: 9px 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  :hover {
+    .arrow {
+      background-color: #666;
+      transition: 0.5s;
+    }
   }
 `;
 
