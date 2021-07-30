@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,6 +28,7 @@ function SearchBar(props) {
   const history = useHistory();
   const userName = useSelector(selectUserName);
   const userPhoto = useSelector(selectUserPhoto);
+  const [profileHidden, setProfileHidden] = useState(false);
 
   const handleAuth = () => {
     auth
@@ -49,6 +50,8 @@ function SearchBar(props) {
       })
     );
   };
+
+  const handleProfileClick = () => {};
 
   return (
     <Container>
@@ -225,6 +228,7 @@ const YesUser = styled.div`
   align-items: center;
   justify-content: flex-end;
   padding-right: 12vw;
+  margin-top: -1px;
 `;
 
 const Icon = styled.div`
@@ -243,6 +247,7 @@ const Icon = styled.div`
 const Avatar = styled.div`
   padding: 0px 10px;
   cursor: pointer;
+  margin-bottom: -6px;
 
   .person {
     font-size: 40px;
