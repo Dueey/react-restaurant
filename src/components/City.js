@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Search, Whatshot, StarBorder } from "@material-ui/icons";
+import { Search, Whatshot, Star } from "@material-ui/icons";
 
 function City() {
   return (
@@ -28,11 +28,11 @@ function City() {
           />
           <a href='/kokonut'>Oishi Shabu Shabu</a>
           <p>
-            <StarBorder className='star' />
-            <StarBorder className='star' />
-            <StarBorder className='star' />
-            <StarBorder className='star' />
-            <StarBorder className='star' />
+            <Star className='star' />
+            <Star className='star' />
+            <Star className='star' />
+            <Star className='star' />
+            <Star className='star' />
             51 reviews
           </p>
           <p>Japanese</p>
@@ -51,11 +51,11 @@ function City() {
             Mario's Neighborhood Butcher Shop & Delicatessen
           </a>
           <p>
-            <StarBorder className='star' />
-            <StarBorder className='star' />
-            <StarBorder className='star' />
-            <StarBorder className='star' />
-            <StarBorder className='star' />
+            <Star className='star' />
+            <Star className='star' />
+            <Star className='star' />
+            <Star className='star' />
+            <Star className='star' />
             51 reviews
           </p>
           <p>Japanese</p>
@@ -72,11 +72,11 @@ function City() {
           />
           <a href='/kokonut'>Kokonut Dessert Bar</a>
           <p>
-            <StarBorder className='star' />
-            <StarBorder className='star' />
-            <StarBorder className='star' />
-            <StarBorder className='star' />
-            <StarBorder className='star' />
+            <Star className='star' />
+            <Star className='star' />
+            <Star className='star' />
+            <Star className='star' />
+            <Star className='star' />
             51 reviews
           </p>
           <p>Japanese</p>
@@ -219,10 +219,15 @@ const Wrap = styled.div`
   }
 
   .star {
-    color: #f15c4f;
-    height: 20px;
-    margin-top: -2px;
-    margin-left: -5px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #f15c4f;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-right: 5px;
+    padding: 0.5px;
+    margin-top: -1px;
+    margin-left: -2px;
   }
 `;
 

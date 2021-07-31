@@ -5,7 +5,7 @@ import {
   EmojiEmotions,
   ThumbUp,
   ThumbDown,
-  StarBorder,
+  Star,
 } from "@material-ui/icons";
 
 function Activity() {
@@ -32,18 +32,16 @@ function Activity() {
         <div className='divider'> </div>
       </Restaurant>
       <Review>
-        <StarBorder className='star' />
-        <StarBorder className='star' />
-        <StarBorder className='star' />
-        <StarBorder className='star' />
-        <StarBorder className='star' />
+        <Star className='star' />
+        <Star className='star' />
+        <Star className='star' />
+        <Star className='star' />
+        <Star className='star' />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur.
+          aliquip ex ea commodo consequat.
         </p>
         <div className='divider'> </div>
       </Review>
@@ -62,7 +60,7 @@ const Wrap = styled.div`
   align-items: flex-start;
   margin: 0 20px;
   width: 300px;
-  height: 500px;
+  height: 465px;
   border: 1px solid #e6e6e6;
   border-radius: 4px;
   overflow-x: hidden;
@@ -146,12 +144,16 @@ const Review = styled.div`
   }
 
   .star {
-    color: #f15c4f;
-    height: 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #f15c4f;
+    border: 1px solid transparent;
+    border-radius: 4px;
     position: relative;
     left: 10px;
     margin-bottom: -12px;
-    margin-right: -5px;
+    margin-right: 1px;
+    margin-left: 2px;
   }
 `;
 

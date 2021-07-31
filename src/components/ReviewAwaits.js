@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Star } from "@material-ui/icons";
+import { Star, Close } from "@material-ui/icons";
 
 function ReviewAwaits() {
   return (
@@ -13,26 +13,28 @@ function ReviewAwaits() {
             alt=''
           />
           <Info>
+            <Close className='close' />
             <span>KoKo Chicken & BBQ</span>
             <p>Help the community decide</p>
             <Stars>
-              <Star className='star' />
-              <Star className='star' />
-              <Star className='star' />
-              <Star className='star' />
-              <Star className='star' />
+              <Star className='star star1' />
+              <Star className='star star2' />
+              <Star className='star star3' />
+              <Star className='star star4' />
+              <Star className='star star5' />
             </Stars>
           </Info>
         </Wrap>
         <Wrap>
           <img
-            src='https://s3-media0.fl.yelpcdn.com/bphoto/I0BkC0ZsjrVeLvINfO7wuQ/ls.jpg'
+            src='https://s3-media0.fl.yelpcdn.com/bphoto/ETzNYO8k3l9JJiwGBaSZ9Q/ls.jpg'
             alt=''
           />
           <Info>
-            <span>KoKo Chicken & BBQ</span>
+            <Close className='close' />
+            <span>85'C Bakery Cafe</span>
             <p>Help the community decide</p>
-            <Stars>
+            <Stars className='stars'>
               <Star className='star' />
               <Star className='star' />
               <Star className='star' />
@@ -85,7 +87,17 @@ const Wrap = styled.div`
 const Info = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   padding: 20px;
+
+  .close {
+    position: relative;
+    align-self: flex-end;
+    right: -100px;
+    top: 10px;
+    color: gray;
+    cursor: pointer;
+  }
 
   span {
     font-size: 16px;
