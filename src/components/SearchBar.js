@@ -91,11 +91,13 @@ function SearchBar(props) {
               <Notifications />
             </Icon>
             <Avatar onClick={() => setSignOutHidden(!signOutHidden)}>
-              <Person className='person' />
+              <Profile src={userPhoto} className='profile' />
               <ArrowDropDown className='arrow' />
             </Avatar>
             {!signOutHidden ? (
               <DropDown>
+                <Profile src={userPhoto} />
+                <span>{userName}</span>
                 <span>Sign Out</span>
               </DropDown>
             ) : null}
@@ -273,15 +275,6 @@ const Avatar = styled.div`
   cursor: pointer;
   margin-bottom: -6px;
 
-  .person {
-    font-size: 40px;
-    color: #4273df;
-    background-color: #a0c3ff;
-    padding: 0px;
-    border: 1px solid transparent;
-    border-radius: 4px 0 0 4px;
-  }
-
   .arrow {
     color: white;
     background-color: gray;
@@ -295,6 +288,12 @@ const Avatar = styled.div`
       transition: 0.5s;
     }
   }
+`;
+
+const Profile = styled.img`
+  height: 42px;
+  /* border: 1px solid gray; */
+  border-radius: 4px 0 0 4px;
 `;
 
 const Logo = styled.a`
