@@ -22,6 +22,9 @@ import {
   ChatBubble,
   Notifications,
   Person,
+  People,
+  Settings,
+  Star,
 } from "@material-ui/icons";
 
 function SearchBar(props) {
@@ -91,14 +94,38 @@ function SearchBar(props) {
               <Notifications />
             </Icon>
             <Avatar onClick={() => setSignOutHidden(!signOutHidden)}>
-              <Profile src={userPhoto} className='profile' />
+              <ProfileIcon src={userPhoto} className='profile' />
               <ArrowDropDown className='arrow' />
             </Avatar>
             {!signOutHidden ? (
               <DropDown>
-                <Profile src={userPhoto} />
-                <span>{userName}</span>
-                <span>Sign Out</span>
+                <Info>
+                  <Profile src={userPhoto} />
+                  <UserInfo>
+                    <span>{userName}</span>
+                    <p>
+                      <People className='people icons' />0{" "}
+                      <Star className='star icons' /> 0
+                    </p>
+                  </UserInfo>
+                </Info>
+                <Options>
+                  <span>
+                    <Person className='person icons' />
+                    About Me
+                  </span>
+                  <span>
+                    <People className='people icons' />
+                    Find Friends
+                  </span>
+                  <span>
+                    <Settings className='settings icons' />
+                    Account Settings
+                  </span>
+                </Options>
+                <Logout>
+                  <span>Log Out</span>
+                </Logout>
               </DropDown>
             ) : null}
           </YesUser>
@@ -261,7 +288,7 @@ const DropDown = styled.div`
   z-index: 2;
   position: absolute;
   top: 45px;
-  height: 200px;
+  height: 212px;
   width: 200px;
   background-color: #fff;
   padding: 10px;
@@ -290,10 +317,99 @@ const Avatar = styled.div`
   }
 `;
 
-const Profile = styled.img`
+const ProfileIcon = styled.img`
   height: 42px;
   /* border: 1px solid gray; */
   border-radius: 4px 0 0 4px;
+`;
+
+const Info = styled.div`
+  display: flex;
+  padding: 2px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e6e6e6;
+`;
+
+const Profile = styled.img`
+  height: 60px;
+  border-radius: 4px;
+  cursor: pointer;
+`;
+
+const UserInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  span {
+    padding: 1px 10px;
+    color: #0073bb;
+    cursor: pointer;
+    :hover {
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    font-size: 12px;
+
+    .icons {
+      font-size: 18px;
+      margin: 5px 5px -2px 8px;
+    }
+
+    .people {
+      color: #f15c00;
+      margin-bottom: -5px;
+    }
+
+    .star {
+      font-size: 13px;
+      padding: 1px;
+      background-color: #f15c00;
+      color: white;
+      border-radius: 2px;
+      margin-bottom: -3px;
+    }
+  }
+`;
+
+const Options = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e6e6e6;
+
+  span {
+    color: #0073bb;
+    cursor: pointer;
+    :hover {
+      text-decoration: underline;
+    }
+  }
+
+  .icons {
+    font-size: 25px;
+    color: #666;
+    padding: 6px 7px 5px 2px;
+    margin-bottom: -11px;
+  }
+`;
+
+const Logout = styled.div`
+  display: flex;
+  padding-top: 12px;
+  padding-left: 2px;
+
+  span {
+    color: #0073bb;
+    font-weight: lighter;
+    cursor: pointer;
+
+    :hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 const Logo = styled.a`
