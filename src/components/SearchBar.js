@@ -18,6 +18,7 @@ import {
   Bathtub,
   Favorite,
   ArrowDropDown,
+  ArrowDropUp,
   ChatBubble,
   Notifications,
   Person,
@@ -29,6 +30,7 @@ function SearchBar(props) {
   const userName = useSelector(selectUserName);
   const userPhoto = useSelector(selectUserPhoto);
   const [profileHidden, setProfileHidden] = useState(false);
+  const [signOutHidden, setSignOutHidden] = useState(true);
 
   const handleAuth = () => {
     auth
@@ -52,6 +54,10 @@ function SearchBar(props) {
   };
 
   const handleProfileClick = () => {};
+
+  const handleAvatarClick = () => {
+    setSignOutHidden(false);
+  };
 
   return (
     <Container>
@@ -84,10 +90,15 @@ function SearchBar(props) {
             <Icon>
               <Notifications />
             </Icon>
-            <Avatar>
+            <Avatar onClick={() => setSignOutHidden(!signOutHidden)}>
               <Person className='person' />
               <ArrowDropDown className='arrow' />
             </Avatar>
+            {!signOutHidden ? (
+              <DropDown>
+                <span>Sign Out</span>
+              </DropDown>
+            ) : null}
           </YesUser>
         )}
       </Nav>
@@ -242,6 +253,19 @@ const Icon = styled.div`
   :hover {
     background-color: gray;
   }
+`;
+
+const DropDown = styled.div`
+  z-index: 2;
+  position: absolute;
+  top: 45px;
+  height: 200px;
+  width: 200px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  box-shadow: 1px 5px 10px 1px gray;
 `;
 
 const Avatar = styled.div`
