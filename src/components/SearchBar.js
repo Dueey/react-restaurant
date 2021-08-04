@@ -36,14 +36,27 @@ function SearchBar(props) {
   const [signOutHidden, setSignOutHidden] = useState(true);
 
   const handleAuth = () => {
-    auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        setUser(result.user);
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
+    if (!userName) {
+      auth
+        .signInWithPopup(provider)
+        .then((result) => {
+          setUser(result.user);
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    } else if (userName) {
+      auth
+        .signOut()
+        .then(() => {
+          setSignOutHidden(true);
+        })
+        .then(() => {
+          dispatch(setSignOutState());
+          history.push("/");
+        })
+        .catch((error) => alert(error.message));
+    }
   };
 
   const setUser = (user) => {
@@ -54,12 +67,6 @@ function SearchBar(props) {
         photo: user.photoURL,
       })
     );
-  };
-
-  const handleProfileClick = () => {};
-
-  const handleAvatarClick = () => {
-    setSignOutHidden(false);
   };
 
   return (
@@ -123,7 +130,7 @@ function SearchBar(props) {
                     Account Settings
                   </span>
                 </Options>
-                <Logout>
+                <Logout onClick={handleAuth}>
                   <span>Log Out</span>
                 </Logout>
               </DropDown>
