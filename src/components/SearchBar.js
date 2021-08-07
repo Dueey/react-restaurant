@@ -328,6 +328,11 @@ const ProfileIcon = styled.img`
   height: 42px;
   /* border: 1px solid gray; */
   border-radius: 4px 0 0 4px;
+
+  :hover {
+    filter: brightness(0.95);
+    transition: 0.5s;
+  }
 `;
 
 const Info = styled.div`
