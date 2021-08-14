@@ -144,18 +144,7 @@ function SearchBar(props) {
           <img src='/images/yelp_logo.png' alt='logo' />
         </a>
       </Logo>
-      <SearchInput color='white' />
-      {/* <SearchInput>
-        <span className='span-item'>Find</span>
-        <input
-          type='text'
-          placeholder='plumbers, delivery, takeout...'
-          className='item'
-        />
-        <span className='span-location'>Near</span>
-        <input type='text' placeholder='Irvine, CA' className='location' />
-        <SearchIcon />
-      </SearchInput> */}
+      <SearchInput />
       <Services>
         <a href='/plumbers'>
           <Bathtub className='services-icon' />
@@ -441,62 +430,6 @@ const Logo = styled.a`
     filter: brightness(1.5);
   }
 `;
-
-// const SearchInput = styled.div`
-//   position: absolute;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   margin-top: 5vh;
-//   border-radius: 4px;
-//   background-color: white;
-//   left: 12vw;
-
-//   span {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     padding: 10px;
-//     font-size: 20px;
-//     color: #000;
-//     height: 27px;
-//   }
-
-//   span.span-location {
-//     border-left: 1px solid lightgrey;
-//     height: 10px;
-//   }
-
-//   input {
-//     height: 45px;
-//     border: none;
-//     font-size: 20px;
-//     :focus {
-//       outline: none;
-//     }
-//   }
-
-//   input.item {
-//     width: 34vw;
-//   }
-
-//   input.location {
-//     width: 28vw;
-//   }
-// `;
-
-// const SearchIcon = styled(Search)`
-//   border-radius: 0 4px 4px 0;
-//   padding: 11.5px 22px;
-//   color: white;
-//   background-color: #d32323;
-//   cursor: pointer;
-
-//   :hover {
-//     background-color: #b30308;
-//     transition: 0.5s;
-//   }
-// `;
 
 const Services = styled.div`
   display: flex;

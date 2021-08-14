@@ -25,6 +25,7 @@ const Nav = styled.div`
 
 const NavMenu = styled.div`
   display: flex;
+  flex-direction: row;
 
   a {
     padding: 30px;
@@ -40,6 +41,9 @@ const NavMenu = styled.div`
   }
 
   span {
+    padding: 10px;
+    display: flex;
+    position: flex-end;
   }
 `;
 
